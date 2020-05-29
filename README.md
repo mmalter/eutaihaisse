@@ -28,11 +28,11 @@ Well, so far there is only one. Come back later for more!
 Just a gen_server that owns an ETS/DETS table. Each table has a 2GB limit.
 
 #### Options
-Lock the table to a specific process open/1 and close/1.
+Lock the table to a specific process using open/1 and close/1.
 
     pid_lock :: true | false
 
-You can choose to persist repectively, only through external call of table_name:backup/0, after each write, periodically or never.
+You can choose to persist repectively, only through external call of backup/1, after each write, periodically or never.
 
     to_disk :: only_backups | each_write | integer() | no_persistence
 
