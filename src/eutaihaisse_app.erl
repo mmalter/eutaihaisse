@@ -16,8 +16,8 @@ start(_, []) ->
     {ok, SupFlags} = application:get_env(sup_flags),
     {ok, TableSpecs} = application:get_env(table_specifications),
     start([], [SupFlags, TableSpecs]);
-start(_, TableSpecs) ->
-    eutaihaisse_sup:start_link(TableSpecs).
+start(_, Args) ->
+    eutaihaisse_sup:start_link(Args).
 
 -spec stop(_) -> ok.
 stop(_State) ->
