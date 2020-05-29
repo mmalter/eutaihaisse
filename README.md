@@ -20,6 +20,17 @@ Some friendly advices:
 ## Usage
 Your tables are specified in the application configuration file. You can pass supervisor flags and table specifications. Each caching method has different options but things are kept consistent where possible. Alternatively, you can simply pass the supervisor flags and the table specifications to the start function.
 
+Once booted, you can access all the basic table operation. Responses are tuples of the form {rightnow, Content} | {promise, Pid}. If you get a response of the form, {promise, Pid}, the caller receives in the future a tuple of the form {as_promised, Content}. You can spawn a monitor on Pid to handle cases where the operation fails (I/0, cup of tea, cats, cosmic rays, etc.).
+
+    eutaihaisse:create(Table, Objects) -> Response
+    eutaihaisse:read(Table, Key) -> Response
+    eutaihaisse:upsert(Table, Objects) -> Response
+    eutaihaisse:update(Table, Objects) -> Response
+    eutaihaisse:delete(Table, Key) -> Response
+    eutaihaisse:backup(Table) -> Response
+    eutaihaisse:open(Table) -> Response
+    eutaihaisse:close(Table) -> Response
+
 ## Caching methods
 Well, so far there is only one. Come back later for more!
 
