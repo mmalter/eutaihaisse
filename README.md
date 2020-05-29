@@ -20,7 +20,7 @@ Some friendly advices:
 ## Usage
 Your tables are specified in the application configuration file. You can pass supervisor flags and table specifications. Each caching method has different options but things are kept consistent where possible. Alternatively, you can simply pass the supervisor flags and the table specifications to the start function.
 
-##Caching methods
+## Caching methods
 Well, so far there is only one. Come back later for more!
 
 ### simple
