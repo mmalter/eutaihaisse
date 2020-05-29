@@ -13,9 +13,9 @@
 
 -spec start(_, [table_spec()]) -> {ok, pid()}.
 start(_, []) ->
-	{ok, SupFlags} = application:get_env(sup_flags),
-	{ok, TableSpecs} = application:get_env(table_specifications),
-	start([], [SupFlags, TableSpecs]);
+    {ok, SupFlags} = application:get_env(sup_flags),
+    {ok, TableSpecs} = application:get_env(table_specifications),
+    start([], [SupFlags, TableSpecs]);
 start(_, TableSpecs) ->
     eutaihaisse_sup:start_link(TableSpecs).
 

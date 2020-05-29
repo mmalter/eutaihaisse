@@ -5,18 +5,18 @@
 %public api
 
 create(Table, Objects) ->
-	gen_server:call(Table, {create, Objects}).
+    gen_server:call(Table, {create, Objects}).
 read(Table, Key) ->
-	gen_server:call(Table, {read, Key}).
+    gen_server:call(Table, {read, Key}).
 upsert(Table, Objects) ->
-	gen_server:call(Table, {upsert, Objects}).
+    gen_server:call(Table, {upsert, Objects}).
 update(Table, Objects) ->
-	gen_server:call(Table, {update, Objects}).
+    gen_server:call(Table, {update, Objects}).
 delete(Table, Key) ->
-	gen_server:call(Table, {delete, Key}).
+    gen_server:call(Table, {delete, Key}).
 backup(Table) ->
-	gen_server:call(Table, backup).
+    gen_server:call(Table, backup).
 open(Table) ->
-	gen_server:call(Table, open).
+    gen_server:call(Table, open).
 close(Table) ->
-	gen_server:call(Table, close).
+    gen_server:call(Table, close).

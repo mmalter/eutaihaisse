@@ -13,28 +13,28 @@
 
 -spec start_link(_) -> {ok, pid()}.
 start_link(_) ->
-	gen_server:start_link({local, ?SERVER}, ?MODULE, []).
+    gen_server:start_link({local, ?SERVER}, ?MODULE, []).
 
 -spec init(_) -> {ok, close}.
 init(_) ->
-	{ok, close}.
+    {ok, close}.
 
 -spec handle_call(ask | close | open, pid(), pid()) ->
-   	{reply, open | close | busy, close | pid()}.
+    {reply, open | close | busy, close | pid()}.
 handle_call({ask, {From, _}}, _, From) ->
-	{reply, open, From};
+    {reply, open, From};
 handle_call({ask, _}, _, close) ->
-	{reply, close, close};
+    {reply, close, close};
 handle_call(ask, _, Pid) ->
-	{reply, busy, Pid};
+    {reply, busy, Pid};
 handle_call({close, {From, _}}, _, From) ->
-	{reply, close, close};
+    {reply, close, close};
 handle_call({close, _}, _, Pid) ->
-	{reply, busy, Pid};
+    {reply, busy, Pid};
 handle_call({open, {From, _}}, _, close) ->
-	{reply, open, From};
+    {reply, open, From};
 handle_call({open, _}, _, Pid) ->
-	{reply, busy, Pid}.
+    {reply, busy, Pid}.
 
 handle_cast(_, _) ->
-	ok.
+    ok.
