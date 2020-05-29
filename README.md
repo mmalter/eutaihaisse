@@ -28,10 +28,14 @@ Well, so far there is only one. Come back later for more!
 Just a gen_server that owns an ETS/DETS table. Each table has a 2GB limit.
 
 #### Options
-*pid_lock :: true | false* Lock the table to a specific process open/1 and close/1.
-*to_disk :: only_backups | each_write | integer() | no_persistence* You can choose to persist repectively, only through external call of table_name:backup/0, after each write, periodically or never.
-*data_type :: set | bag | duplicate_bag* A set is a tuple with a key and an object. A bag has many objects but only one instance of each object, per key. A duplicate_bag can have many objects, including multiple copies of the same object, per key.
-*keypos :: integer* The position of the key in your objects.
+  *pid_lock :: true | false*
+ Lock the table to a specific process open/1 and close/1.
+  *to_disk :: only_backups | each_write | integer() | no_persistence*
+You can choose to persist repectively, only through external call of table_name:backup/0, after each write, periodically or never.
+  *data_type :: set | bag | duplicate_bag*
+A set is a tuple with a key and an object. A bag has many objects but only one instance of each object, per key. A duplicate_bag can have many objects, including multiple copies of the same object, per key.
+  *keypos :: integer*
+ The position of the key in your objects.
 
 ## Build
 
