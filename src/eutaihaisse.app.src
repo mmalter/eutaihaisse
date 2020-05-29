@@ -16,5 +16,5 @@
        ]},
   {modules, []},
   {licenses, ["GPLv3"]},
-  {links, []}
+  {links, ["Github", "https://github.com/mmalter/eutaihaisse"]}
  ]}.
