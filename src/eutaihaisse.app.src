@@ -1,0 +1,20 @@
+{application, eutaihaisse,
+ [{description, "Some simple cache implementations"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {eutaihaisse_app, []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[{sup_flags, #{strategy => one_for_one, intensity => 1, period => 5}},
+        {table_specifications, [{"eutaihaisse_example", simple, #{pid_lock => true,
+                                                                  to_disk => 180000,
+                                                                  data_type => set,
+                                                                  keypos => 1
+                                                                 }}]}
+       ]},
+  {modules, []},
+  {licenses, ["GPLv3"]},
+  {links, []}
+ ]}.
