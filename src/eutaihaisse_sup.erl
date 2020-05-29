@@ -34,7 +34,8 @@ build_table_spec({Name, simple, TableDef_}) ->
 	TableDef = #simple_table_definition{pid_lock = Pid_lock,
 										to_disk = To_disk,
 										data_type = Data_type,
-										keypos = Keypos},
+										keypos = Keypos
+									   },
 	Module = case To_disk of
 				 no_persistence -> simple_ets;
 				 _ -> simple_dets
